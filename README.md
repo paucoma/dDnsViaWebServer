@@ -30,22 +30,26 @@ This motivated the creation of a self maintained Dynamic DNS service using web h
 
 ## Installation
 
-1. Create an **API Key** with Function Access ** dns-* ** this includes All dns functions
-1a. dns-add_record
-1b. dns-list_records
-1c. dns-remove_record
-2. Add a **custom DNS record** with the hostname that you wish
-2a. Type: **A**
-2b. Value: any IP address as we will update this
-3. Install and configure the php script on your webserver. Following instructions at [Dreamhost Wiki](http://wiki.dreamhost.com/Dynamic_DNS)
-3a. ssh into your webspace
-3b. goto a web accessible directory and download the php script dyndns.php
-3c. change the access rights and modify the script to include your
-* '$DH_API_KEY', setting the value to the API key given
-* '$HOSTS' to limit it to only the dns entries you wish to allow modification to
-* '$PASSWD' to protect this page
-4. Download and configure the vbscript to the computer in the network you want to update the host domain name from
-5. Setup a repetitive task with the windows task scheduler to call this script.
+- Create an **API Key** with Function Access ** dns-(asterix) ** this includes All dns functions
++ dns-add_record
++ dns-list_records
++ dns-remove_record
+
+- Add a **custom DNS record** with the hostname that you wish
++ Type: **A**
++ Value: any IP address as we will update this
+
+- Install and configure the php script on your webserver. Following instructions at [Dreamhost Wiki](http://wiki.dreamhost.com/Dynamic_DNS)
+- ssh into your webspace
+- goto a web accessible directory and download the php script dyndns.php
+- change the access rights and modify the script to include your
++ '$DH_API_KEY', setting the value to the API key given
++ '$HOSTS' to limit it to only the dns entries you wish to allow modification to
++ '$PASSWD' to protect this page
+
+- Download and configure the vbscript to the computer in the network you want to update the host domain name from
+
+- Setup a repetitive task with the windows task scheduler to call this script.
 
 All done.
 
@@ -58,10 +62,11 @@ All done.
 ## Tests
 
 * Server Side setup only test
-** With the API Key, the hostname reserved and the php script downloaded and configured you can manually test the update.
-** Open a webbrowser and open the following url
-*** http://mydomain.com/dyndns.php?host=<hostname to update>&passwd=<authentification>&ip=<ip address to update from>
-** You should see the result.
+* With the API Key, the hostname reserved and the php script downloaded and configured you can manually test the update.
+* Open a webbrowser and open the following url
+
+* http://mydomain.com/dyndns.php?host=<hostname to update>&passwd=<authentification>&ip=<ip address to update from>
+* You should see the result.
 
 ## Contributors
 
